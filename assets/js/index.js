@@ -24,14 +24,11 @@ function enviarPedido() {
         mensaje += `➤ ${ing}\n`;
     });
 
-    const numero = "56988925516";
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
-    window.open(url, '_blank');
+    localStorage.setItem("mensajeWhatsapp", mensaje);
+    window.location.href = "pedido-realizado.html";
 
     window.location.href = "pedido-realizado.html";
 }
-
 
 function limitarIngredientes() {
     const checkboxes = document.querySelectorAll('input[name="ingredientes"]');
