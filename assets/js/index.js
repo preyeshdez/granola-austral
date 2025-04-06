@@ -24,7 +24,7 @@ function enviarPedido() {
         mensaje += `➤ ${ing}\n`;
     });
 
-    const numero = "56982355913";
+    const numero = "56988925516";
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, '_blank');
