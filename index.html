@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granola Austral</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header class="my-4 text-center px-3">
+        <h1 class="text-center text-success d-none">Granola Austral</h1>
+        <img src="./assets/img/logo.png" style="max-width: 400px;" alt="logo">
+    </header>
+
+    <h2 class="text-center mb-4">Pedido de Granola</h2>
+
+    <div class="container mt-3">
+
+        <form onsubmit="event.preventDefault(); enviarPedido();" class="p-4 border rounded shadow-sm bg-light mx-auto"
+            style="max-width: 600px; width: 100%;">
+            <div class="form-group">
+                <label for="cantidad" class="font-weight-bold">Cantidad:</label>
+                <select id="cantidad" class="form-control" required>
+                    <option value="350 g">350 g</option>
+                    <option value="700 g">700 g</option>
+                    <option value="1 kg">1 kg</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-bold">Endulzante:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="endulzante" value="Miel" id="miel" class="form-check-input">
+                    <label for="miel" class="form-check-label">Miel</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="endulzante" value="Alulosa" id="alulosa" class="form-check-input">
+                    <label for="alulosa" class="form-check-label">Alulosa</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-bold">Elige hasta 6 ingredientes:</label>
+                <small class="form-text text-muted text-center">Has seleccionado <span class="font-weight-bold"
+                        id="contadorIngredientes">0 de 6</span> ingredientes.</small>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Nueces" id="nueces" class="form-check-input"
+                        onchange="actualizarContador()">
+                    <label for="nueces" class="form-check-label">Nueces</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Almendras" id="almendras" class="form-check-input"
+                        onchange="actualizarContador()">
+                    <label for="almendras" class="form-check-label">Almendras</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Avellanas" id="avellanas" class="form-check-input"
+                        onchange="actualizarContador()">
+                    <label for="avellanas" class="form-check-label">Avellanas</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Maní" id="mani" class="form-check-input"
+                        onchange="actualizarContador()">
+                    <label for="mani" class="form-check-label">Maní</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Plátano deshidratado" id="platano"
+                        class="form-check-input" onchange="actualizarContador()">
+                    <label for="platano" class="form-check-label">Plátano deshidratado</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Cranberries deshidratados" id="cranberries"
+                        class="form-check-input" onchange="actualizarContador()">
+                    <label for="cranberries" class="form-check-label">Cranberries deshidratados</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Pasas" id="pasas" class="form-check-input"
+                        onchange="actualizarContador()">
+                    <label for="pasas" class="form-check-label">Pasas</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Chispas de chocolate" id="chocolate"
+                        class="form-check-input" onchange="actualizarContador()">
+                    <label for="chocolate" class="form-check-label">Chispas de chocolate</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Chía" id="chia" class="form-check-input"
+                        onchange="actualizarContador()">
+                    <label for="chia" class="form-check-label">Chía</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Semillas de zapallo" id="zapallo"
+                        class="form-check-input" onchange="actualizarContador()">
+                    <label for="zapallo" class="form-check-label">Semillas de zapallo</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Semillas de girasol" id="girasol"
+                        class="form-check-input" onchange="actualizarContador()">
+                    <label for="girasol" class="form-check-label">Semillas de girasol</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Semillas de linaza" id="linaza"
+                        class="form-check-input" onchange="actualizarContador()">
+                    <label for="linaza" class="form-check-label">Semillas de linaza</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Coco" id="coco" class="form-check-input"
+                        onchange="actualizarContador()">
+                    <label for="coco" class="form-check-label">Coco</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success mx-auto d-block mt-4 btn-wsp" style="max-width: 300px;"><i
+                    class="fab fa-whatsapp"></i> Enviar pedido</button>
+        </form>
+
+        <div class="text-center my-5">
+            <div class="my-5">
+                <a href="https://www.instagram.com/granola.austral" target="_blank" class="btn btn-instagram">
+                    <i class="fab fa-instagram"></i> Síguenos en Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
