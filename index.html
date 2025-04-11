@@ -17,7 +17,7 @@
         <div class="logo-wrapper mx-auto">
             <img src="./assets/img/logo.webp" alt="logo" class="img-fluid">
         </div>
-        
+
     </header>
 
     <h2 class="text-center mb-4">Pedido de Granola</h2>
@@ -27,7 +27,13 @@
         <form onsubmit="event.preventDefault(); enviarPedido();" class="p-4 border rounded shadow-sm bg-light mx-auto"
             style="max-width: 600px; width: 100%;">
             <div class="form-group">
+                <label for="nombre" class="form-label font-weight-bold">Ingresa nombre del cliente:</label>
+                <input type="text" class="form-control" name="nombre" id="nombre">
+            </div>
+
+            <div class="form-group">
                 <label for="cantidad" class="font-weight-bold">Cantidad:</label>
+
                 <select id="cantidad" class="form-control" required>
                     <option value="350 g - $4.500">350 g - $4.500</option>
                     <option value="700 g - $8.500">700 g - $8.500</option>
@@ -37,10 +43,12 @@
 
             <div class="form-group">
                 <label class="font-weight-bold">Endulzante:</label><br>
+
                 <div class="form-check form-check-inline">
                     <input type="radio" name="endulzante" value="Miel" id="miel" class="form-check-input">
                     <label for="miel" class="form-check-label">Miel</label>
                 </div>
+
                 <div class="form-check form-check-inline">
                     <input type="radio" name="endulzante" value="Alulosa" id="alulosa" class="form-check-input">
                     <label for="alulosa" class="form-check-label">Alulosa</label>
@@ -49,71 +57,71 @@
 
             <div class="form-group">
                 <label class="font-weight-bold">Elige hasta 6 ingredientes:</label>
-                <small class="form-text text-muted text-center">Has seleccionado <span class="font-weight-bold"
-                        id="contadorIngredientes">0 de 6</span> ingredientes.</small>
+
+                <small class="form-text text-muted text-center">Has seleccionado <span class="font-weight-bold" id="contadorIngredientes">0 de 6</span> ingredientes.</small>
+
                 <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Nueces" id="nueces" class="form-check-input"
-                        onchange="actualizarContador()">
+                    <input type="checkbox" name="ingredientes" value="Nueces" id="nueces" class="form-check-input">
                     <label for="nueces" class="form-check-label">Nueces</label>
                 </div>
+
                 <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Almendras" id="almendras" class="form-check-input"
-                        onchange="actualizarContador()">
+                    <input type="checkbox" name="ingredientes" value="Almendras" id="almendras" class="form-check-input">
                     <label for="almendras" class="form-check-label">Almendras</label>
                 </div>
+
                 <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Avellanas" id="avellanas" class="form-check-input"
-                        onchange="actualizarContador()">
-                    <label for="avellanas" class="form-check-label">Avellanas</label>
+                    <input type="checkbox" name="ingredientes" value="Avellana europea" id="avellanas" class="form-check-input" >
+                    <label for="avellanas" class="form-check-label">Avellana europea</label>
                 </div>
+
                 <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Maní" id="mani" class="form-check-input"
-                        onchange="actualizarContador()">
+                    <input type="checkbox" name="ingredientes" value="Maní" id="mani" class="form-check-input">
                     <label for="mani" class="form-check-label">Maní</label>
                 </div>
+
                 <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Plátano deshidratado" id="platano"
-                        class="form-check-input" onchange="actualizarContador()">
-                    <label for="platano" class="form-check-label">Plátano deshidratado</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Cranberries deshidratados" id="cranberries"
-                        class="form-check-input" onchange="actualizarContador()">
-                    <label for="cranberries" class="form-check-label">Cranberries deshidratados</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Pasas" id="pasas" class="form-check-input"
-                        onchange="actualizarContador()">
-                    <label for="pasas" class="form-check-label">Pasas</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Chispas de chocolate" id="chocolate"
-                        class="form-check-input" onchange="actualizarContador()">
-                    <label for="chocolate" class="form-check-label">Chispas de chocolate</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Chía" id="chia" class="form-check-input"
-                        onchange="actualizarContador()">
-                    <label for="chia" class="form-check-label">Chía</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Semillas de zapallo" id="zapallo"
-                        class="form-check-input" onchange="actualizarContador()">
-                    <label for="zapallo" class="form-check-label">Semillas de zapallo</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Semillas de girasol" id="girasol"
-                        class="form-check-input" onchange="actualizarContador()">
-                    <label for="girasol" class="form-check-label">Semillas de girasol</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Linaza" id="linaza"
-                        class="form-check-input" onchange="actualizarContador()">
+                    <input type="checkbox" name="ingredientes" value="Linaza" id="linaza" class="form-check-input">
                     <label for="linaza" class="form-check-label">Linaza</label>
                 </div>
+
                 <div class="form-check">
-                    <input type="checkbox" name="ingredientes" value="Coco" id="coco" class="form-check-input"
-                        onchange="actualizarContador()">
+                    <input type="checkbox" name="ingredientes" value="Chía" id="chia" class="form-check-input">
+                    <label for="chia" class="form-check-label">Chía</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Semillas de zapallo" id="zapallo" class="form-check-input" >
+                    <label for="zapallo" class="form-check-label">Semillas de zapallo</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Semillas de girasol" id="girasol" class="form-check-input" >
+                    <label for="girasol" class="form-check-label">Semillas de girasol</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Plátano deshidratado" id="platano" class="form-check-input" >
+                    <label for="platano" class="form-check-label">Plátano deshidratado</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Cranberries deshidratados" id="cranberries" class="form-check-input" >
+                    <label for="cranberries" class="form-check-label">Cranberries deshidratados</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Pasas" id="pasas" class="form-check-input">
+                    <label for="pasas" class="form-check-label">Pasas</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Chispas de chocolate" id="chocolate" class="form-check-input">
+                    <label for="chocolate" class="form-check-label">Chispas de chocolate</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="ingredientes" value="Coco" id="coco" class="form-check-input">
                     <label for="coco" class="form-check-label">Coco</label>
                 </div>
             </div>

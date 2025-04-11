@@ -1,11 +1,17 @@
 function enviarPedido() {
     const cantidad = document.getElementById('cantidad').value;
     const endulzante = document.querySelector('input[name="endulzante"]:checked')?.value;
+    const nombre = document.getElementById('nombre').value;
 
     const ingredientes = [];
-    document.querySelectorAll('input[name="ingredientes"]:checked').forEach(el => {
-        ingredientes.push(el.value);
+    document.querySelectorAll('input[name="ingredientes"]:checked').forEach(sel => {
+        ingredientes.push(sel.value);
     });
+
+    if (!nombre) {
+        alert("Por favor ingresa tu nombre.")
+        return;
+    }
 
     if (!endulzante) {
         alert("Por favor selecciona un tipo de endulzante.");
@@ -17,17 +23,19 @@ function enviarPedido() {
         return;
     }
 
-    let mensaje = `Hola!\n`;
-    mensaje += `Quiero pedir una granola de ${cantidad} \n\n*Endulzante:*\n➤ ${endulzante}\n`;
-    mensaje += `\n*Ingredientes:*\n`;
+    let mensaje = `Hola!%0D%0A`;
+    mensaje += `Quiero pedir una granola de ${cantidad} %0D%0A%0D%0A`;
+    mensaje += `*Nombre cliente:*%0D%0A`;
+    mensaje += `➤ ${nombre}%0D%0A%0D%0A`;
+    mensaje += `*Endulzante:*%0D%0A➤ ${endulzante}%0D%0A%0D%0A`;
+    mensaje += `*Ingredientes:*%0D%0A`;
     ingredientes.forEach(ing => {
-        mensaje += `➤ ${ing}\n`;
+        mensaje += `➤ ${ing}%0D%0A`;
     });
 
-    localStorage.setItem("mensajeWhatsapp", mensaje);
-    window.location.href = "pedido-realizado.html";
+    const mensajeEncoded = encodeURIComponent(mensaje);
+    window.location.href = `pedido-realizado.html?mensaje=${mensajeEncoded}`;
 
-    window.location.href = "pedido-realizado.html";
 }
 
 function limitarIngredientes() {

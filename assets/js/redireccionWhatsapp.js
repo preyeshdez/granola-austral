@@ -1,9 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
     const numero = "56988925516";
-    const mensaje = localStorage.getItem("mensajeWhatsapp") || "";
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    const params = new URLSearchParams(window.location.search);
+    const mensaje = params.get("mensaje");
+
+    if (!mensaje || mensaje.trim() === "") {
+        alert("¡Ups! No pudimos recuperar tu pedido. Te llevamos de vuelta al formulario para que lo intentes nuevamente 😊");
+        window.location.href = "index.html";
+        return;
+    }
+
+    const url = `https://wa.me/${numero}?text=${mensaje}`;
 
     setTimeout(() => {
         window.location.href = url;
-    }, 5000);
-});  
+    }, 3000);
+});
