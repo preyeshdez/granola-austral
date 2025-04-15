@@ -13,34 +13,25 @@
     object-fit: contain;
 }
 
-
-.btn-wsp {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #25d366;
-    color: white;
-    padding: 20px 40px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 50px;
-    border: none;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.mensaje-mantenimiento {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.btn-wsp:hover {
-    background-color: #128c7e;
-    transform: scale(1.05);
+.mensaje-mantenimiento h2 {
+  color: #28a745;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.btn-wsp i {
-    margin-right: 15px;
-    font-size: 28px;
-}
-
-.btn-wsp:focus {
-    outline: none;
+.mensaje-mantenimiento p {
+  font-size: 18px;
+  color: #555;
 }
 
 .btn-instagram {
@@ -69,34 +60,5 @@
 }
 
 .btn-instagram:focus {
-    outline: none;
-}
-
-.btn-regresar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 50px;
-    border: none;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.btn-regresar:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-.btn-regresar i {
-    margin-right: 10px;
-    font-size: 24px;
-}
-
-.btn-regresar:focus {
     outline: none;
 }
