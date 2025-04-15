@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!mensaje || mensaje.trim() === "") {
         alert("¡Ups! No pudimos recuperar tu pedido. Te llevamos de vuelta al formulario para que lo intentes nuevamente 😊");
-        window.location.href = "index.html";
+        window.history.back() || (window.location.href = "index.html");
         return;
     }
 
@@ -13,5 +13,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
         window.location.href = url;
-    }, 3000);
+    }, 2000);
 });
