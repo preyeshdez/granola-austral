@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const url = `https://wa.me/${numero}?text=${mensaje}`;
 
+    const fallbackLink = document.getElementById("fallback-link");
+    if (fallbackLink) fallbackLink.href = url;
+
     setTimeout(() => {
         window.location.href = url;
     }, 2000);
