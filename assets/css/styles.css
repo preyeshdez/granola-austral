@@ -100,3 +100,13 @@
 .btn-regresar:focus {
     outline: none;
 }
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+.mensaje-redireccion {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #25d366;
+}

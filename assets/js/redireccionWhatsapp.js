@@ -5,13 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!mensaje || mensaje.trim() === "") {
         alert("¡Ups! No pudimos recuperar tu pedido. Te llevamos de vuelta al formulario para que lo intentes nuevamente 😊");
-        window.location.href = "index.html";
+        window.history.back() || (window.location.href = "index.html");
         return;
     }
 
     const url = `https://wa.me/${numero}?text=${mensaje}`;
 
+    const fallbackLink = document.getElementById("fallback-link");
+    if (fallbackLink) fallbackLink.href = url;
+
     setTimeout(() => {
         window.location.href = url;
-    }, 3000);
+    }, 2000);
 });
